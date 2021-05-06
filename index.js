@@ -14,8 +14,6 @@ const getPermission = async (options = {}) => {
   );
   if (granted === PermissionsAndroid.RESULTS.GRANTED) {
     //we can resume
-  } else {
-    throw "Screenshot permission denied";
   }
 };
 //#endregion
