@@ -9,16 +9,8 @@ import { useEffect, useState } from "react";
 import { DeviceEventEmitter, PermissionsAndroid, AppState } from "react-native";
 //#region Android permission management
 const getPermission = async (options = {}) => {
-  const {
-    title = "Screenshot Protector",
-    message = "HIGHLY RECOMMENDED. Permission to detect when a screenshot is taken while this app is open.",
-    buttonNeutral = "Ask me later",
-    buttonNegative = "Cancel",
-    buttonPositive = "OK"
-  } = options;
   const granted = await PermissionsAndroid.request(
-    PermissionsAndroid.PERMISSIONS.READ_EXTERNAL_STORAGE,
-    { title, message, buttonNeutral, buttonNegative, buttonPositive }
+    PermissionsAndroid.PERMISSIONS.READ_EXTERNAL_STORAGE
   );
   if (granted === PermissionsAndroid.RESULTS.GRANTED) {
     //we can resume
