@@ -49,7 +49,7 @@ const start = async options => {
     options = {};
     callback = null;
   }
-  await getPermission(options);
+  // await getPermission(options);
   if (callback) addListener(callback);
   await doStart();
   AppState.addEventListener("change", onAppStateChange);
